@@ -11,7 +11,6 @@ const getRandom = (messages: string[]) => {
 
 const ResultContainer = styled.div`
     text-align: center;
-    margin-top: 60px;
     font-size: 2rem;
 `
 

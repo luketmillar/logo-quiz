@@ -25,14 +25,15 @@ const Question = ({ name, answer, onAnswer, next }: IProps) => {
                 <div style={{ width: 20 }} />
                 <OptionButton onClick={controller.b} name={name} option={Option.B} selected={controller.selected} answer={answer} />
             </div>
-            {controller.answered ? <>
+            {controller.answered ? <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', marginTop: 60 }}>
                 <Result correct={controller.answered ? controller.correct : undefined} />
+                <div style={{ width: 20 }} />
                 <div style={{ display: 'flex', justifyContent: 'flex-end' }}><Next onClick={next} /></div>
-            </> : <div style={{ height: 146 }} />
+            </div> : <div style={{ height: 118 }} />
             }
 
         </div>
-    </div>
+    </div >
 }
 
 

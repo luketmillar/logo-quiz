@@ -5,7 +5,9 @@ import { Option } from './types'
 
 const Img = styled.img`
     width: 200px;
+    height: 200px;
     border-radius: 10px;
+    object-fit: contain;
 `
 const OptionImg = ({ filename }: { filename: string }) => <Img src={process.env.PUBLIC_URL + `/logos/${filename}`} alt="" />
 

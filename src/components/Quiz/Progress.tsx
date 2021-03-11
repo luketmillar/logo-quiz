@@ -16,7 +16,7 @@ const Progress = styled.div<{ progress: number }>`
     top: 0;
     height: 30px;
     width: ${props => props.progress}%;
-    background-color: #9FE5FF;
+    background-color: #000;
     transition: width 200ms ease;
 `
 
