@@ -32,7 +32,7 @@ const Quiz = ({ done }: IProps) => {
     }
     return <>
         <Attribution />
-        <ProgressBar index={scorer.total} total={10} score={scorer.score} />
+        <ProgressBar index={scorer.total} total={15} score={scorer.score} />
         <div style={{ height: 40 }} />
         <Question key={index} name={question.name} answer={question.answer} onAnswer={scorer.set} next={nextQuestion} />
     </>
