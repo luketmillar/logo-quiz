@@ -8,6 +8,10 @@ const Img = styled.img`
     height: 200px;
     border-radius: 10px;
     object-fit: contain;
+    @media screen and (max-width: 500px), screen and (max-height: 500px) {
+        width: 150px;
+        height: 150px;
+    }
 `
 const OptionImg = ({ filename }: { filename: string }) => <Img src={process.env.PUBLIC_URL + `/logos/${filename}`} alt="" />
 
@@ -36,6 +40,10 @@ const Button = styled.div<{ correct: boolean | undefined }>`
     :hover {
         border: 1px solid #9FE5FF;
         background-color: #ECFAFF;
+    }
+
+    @media screen and (max-width: 500px), screen and (max-height: 500px) {
+        padding: 20px;
     }
 
     ${props => props.correct !== undefined && (props.correct ? correctCss : incorrectCss)}

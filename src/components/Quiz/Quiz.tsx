@@ -1,8 +1,8 @@
 import React from 'react'
+import Attribution from '../Attribution'
 import ProgressBar from './Progress'
 import Question from './Question'
 import questions from './Questions'
-import Score from './Score'
 
 const useScorer = () => {
     const [score, setScore] = React.useState(0)
@@ -31,12 +31,10 @@ const Quiz = ({ done }: IProps) => {
         setIndex(i => i + 1)
     }
     return <>
-        <ProgressBar index={scorer.total} total={10} />
+        <Attribution />
+        <ProgressBar index={scorer.total} total={10} score={scorer.score} />
         <div style={{ height: 40 }} />
-        <div style={{ position: 'absolute', left: 0, top: 0 }}><Score correct={scorer.score} total={scorer.total} /></div>
-        <div style={{ position: 'absolute', top: '40%', left: '50%', transform: 'translate(-50%, -40%)' }}>
-            <Question key={index} name={question.name} answer={question.answer} onAnswer={scorer.set} next={nextQuestion} />
-        </div>
+        <Question key={index} name={question.name} answer={question.answer} onAnswer={scorer.set} next={nextQuestion} />
     </>
 }
 

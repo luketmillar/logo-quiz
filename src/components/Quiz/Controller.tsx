@@ -19,7 +19,7 @@ enum State {
 }
 
 const QuizController = () => {
-    const [state, setState] = React.useState<State>(State.Start)
+    const [state, setState] = React.useState<State>(State.Play)
     const [score, setScore] = React.useState<{ score: number, total: number }>({ score: 8, total: 10 })
 
     const handleDone = (score: number, total: number) => {

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Background = styled.div`
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     right: 0;
@@ -11,7 +11,7 @@ const Background = styled.div`
 `
 
 const Progress = styled.div<{ progress: number }>`
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     height: 30px;
@@ -20,10 +20,12 @@ const Progress = styled.div<{ progress: number }>`
     transition: width 200ms ease;
 `
 
-const ProgressBar = ({ index, total }: { index: number, total: number }) => {
+const ProgressBar = ({ index, total, score }: { index: number, total: number, score: number }) => {
     return <>
         <Background />
-        <Progress progress={100 * index / total} />
+        <Progress progress={100 * index / total}>
+            {index > 0 && <div style={{ height: 26, marginLeft: 10, fontWeight: 600, whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', color: '#fff' }}>{score} / {index}</div>}
+        </Progress>
     </>
 }
 

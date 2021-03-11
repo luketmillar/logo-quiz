@@ -14,6 +14,10 @@ const ResultContainer = styled.div`
     font-size: 1.2rem;
     color: #666;
     text-transform: uppercase;
+
+    @media screen and (max-width: 500px), screen and (max-height: 500px) {
+        display: none;
+    }
 `
 
 const Result = ({ correct }: { correct: boolean | undefined }) => {
