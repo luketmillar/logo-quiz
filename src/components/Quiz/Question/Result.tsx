@@ -11,7 +11,9 @@ const getRandom = (messages: string[]) => {
 
 const ResultContainer = styled.div`
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.2rem;
+    color: #666;
+    text-transform: uppercase;
 `
 
 const Result = ({ correct }: { correct: boolean | undefined }) => {

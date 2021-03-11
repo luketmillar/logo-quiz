@@ -27,7 +27,7 @@ const Question = ({ name, answer, onAnswer, next }: IProps) => {
             </div>
             {controller.answered ? <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', marginTop: 60 }}>
                 <Result correct={controller.answered ? controller.correct : undefined} />
-                <div style={{ width: 20 }} />
+                <div style={{ width: 40 }} />
                 <div style={{ display: 'flex', justifyContent: 'flex-end' }}><Next onClick={next} /></div>
             </div> : <div style={{ height: 118 }} />
             }
