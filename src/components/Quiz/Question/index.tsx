@@ -44,6 +44,7 @@ const Question = ({ name, answer, onAnswer, next }: IProps) => {
                         <OptionButton onClick={controller.b} name={name} option={Option.B} selected={controller.selected} answer={answer} />
                     </Options>
                 </div>
+                <div style={{ marginTop: 20, fontSize: 20, height: 40 }}>{controller.answered ? controller.correct ? 'Correct!' : 'Womp womp' : null}</div>
             </div>
         </div>
         {controller.answered &&
