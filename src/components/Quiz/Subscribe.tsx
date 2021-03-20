@@ -44,6 +44,9 @@ const Subscribe = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.stopPropagation()
         e.preventDefault()
+        if (!emailRef.current?.value) {
+            return false
+        }
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
