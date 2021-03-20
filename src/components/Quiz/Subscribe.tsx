@@ -43,7 +43,6 @@ const Subscribe = () => {
     const emailRef = React.useRef<HTMLInputElement>(null)
     const handleSubmit = (e: React.FormEvent) => {
         e.stopPropagation()
-        e.preventDefault()
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -52,14 +51,14 @@ const Subscribe = () => {
                 "email": emailRef.current?.value
             })
         }).then(() => setSubscribed(true), () => setSubscribed(true))
-        return false
     }
     return <Container>
         {subscribed ? <Message>Thank you for subscribing!</Message> :
             <>
                 <Message>Wanna hear about future quizes, games, and projects? Subscribe!</Message>
                 <div style={{ height: 20 }} />
-                <Form onSubmit={handleSubmit} method="POST" data-netlify="true">
+                <Form name={subscribe} onSubmit={handleSubmit} method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="subscribe" />
                     <input ref={emailRef} style={{ height: 58, width: 300, boxSizing: 'border-box', borderRadius: 0, border: '1px solid black', fontSize: 18, padding: '12px 18px' }} type="email" name="email" placeholder="email@address.com" />
                     <Submit type="submit">Subscribe</Submit>
                 </Form>
