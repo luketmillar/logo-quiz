@@ -58,7 +58,7 @@ const Subscribe = () => {
             <>
                 <Message>Wanna hear about future quizes, games, and projects? Subscribe!</Message>
                 <div style={{ height: 20 }} />
-                <Form name="subscribe" onSubmit={handleSubmit} method="POST" data-netlify="true">
+                <Form onSubmit={handleSubmit} method="POST" data-netlify="true">
                     <input type="hidden" name="form-name" value="subscribe" />
                     <input ref={emailRef} style={{ height: 58, width: 300, boxSizing: 'border-box', borderRadius: 0, border: '1px solid black', fontSize: 18, padding: '12px 18px' }} type="email" name="email" placeholder="email@address.com" />
                     <Submit type="submit">Subscribe</Submit>
