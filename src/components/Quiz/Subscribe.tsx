@@ -51,6 +51,7 @@ const Subscribe = () => {
                 "email": emailRef.current?.value
             })
         }).then(() => setSubscribed(true), () => setSubscribed(true))
+        return false
     }
     return <Container>
         {subscribed ? <Message>Thank you for subscribing!</Message> :
